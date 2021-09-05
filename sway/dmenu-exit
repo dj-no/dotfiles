@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# a simple dmenu session script 
+#
+###
+
+#DMENU='dmenu -i -b -fn -xos4-terminus-medium-r-*--12-*-*-*-*-*-iso10646-1 -nb #000000 -nf #999999 -sb #000000 -sf #31658C'
+DMENU='dmenu -h 30 -f 4 -fn Iosevka'
+choice=$(echo -e "lock\nlogout\nshutdown\nreboot" | $DMENU)
+
+case "$choice" in
+  lock) swaylock-fancy -gFef "Iosevka"  & ;;
+  logout) rm /run/user/1000/wob.sock; swaymsg exit & ;;
+  shutdown) systemctl poweroff & ;;
+  reboot) systemctl reboot & ;;
+esac
