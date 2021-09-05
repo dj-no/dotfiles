@@ -6,6 +6,7 @@ dont expect much i just made this repo to fuck around with vms
 * swaylock-fancy
 * wob
 * zsh
+* alacritty
 * emote emoji picker
 * mako
 * iosevka font
